@@ -1,0 +1,30 @@
+/* ================================ 
+MIXINS custom made for screen size |
+================================= */
+/* Visible content: for less than 320px */
+@mixin for-phone-only {
+  @media (max-width: 320px) { @content; }
+} 
+/* Visible content: only for tablets */
+@mixin for-tablet-only {
+  @media (min-width: 321px) and (max-width: 860px) { @content; }
+}
+/* Visible content: for desktops */
+@mixin for-desktop-up {
+  @media (min-width: 861px) { @content; }
+}
+
+
+.phone-only {
+  @include for-phone-only { background: blue; }
+}
+
+.tablet-only {
+  @include for-tablet-only { background: green; }
+}
+
+.desktop-up {
+  @include for-desktop-up { background: purple; }
+}
+
+

@@ -63,9 +63,11 @@ class Main extends Component {
     )
 
     return (
-      <div className="main-container">
-        <h1>This is Main routed using store and provider!</h1>
-        {content}
+      <div className="Main-container col-xs-12 small phone-only tablet-only desktop-up">
+        <div className="wrapper-container">
+          <h1>only show is this is Phone</h1>
+          {content}
+        </div>
       </div>
     )
   }
