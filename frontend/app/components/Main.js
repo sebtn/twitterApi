@@ -40,7 +40,7 @@ class Main extends Component {
     let content = !!this.state.isAuthenticated ?
     (
       <div>
-        <p>Yo are Authenticated</p>
+        <p>You are now authenticated</p>
         <div>
           {this.state.user.email}
         </div>
@@ -50,6 +50,7 @@ class Main extends Component {
             className="button" >
             Log out
           </button>
+        {/*todo: add button to reroute to components and make a request to twitter*/}
         </div>
       </div>
     ) :
@@ -62,7 +63,7 @@ class Main extends Component {
     )
 
     return (
-      <div className="Main-container">
+      <div className="main-container">
         <h1>This is Main routed using store and provider!</h1>
         {content}
       </div>

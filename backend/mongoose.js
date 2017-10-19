@@ -5,7 +5,7 @@ var mongoose = require('mongoose'),
 
 module.exports = function () {
 
-  var db = mongoose.connect('mongodb://localhost:27017/twitter-demo');
+  var db = mongoose.connect('mongodb://localhost:27017/twitterauthandapi');
 
   var UserSchema = new Schema({
     email: {
