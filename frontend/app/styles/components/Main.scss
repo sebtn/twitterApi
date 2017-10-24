@@ -14,17 +14,23 @@ MIXINS custom made for screen size |
   @media (min-width: 861px) { @content; }
 }
 
-
 .phone-only {
-  @include for-phone-only { background: blue; }
+  @include for-phone-only { 
+    background: blue; 
+  }
 }
 
 .tablet-only {
-  @include for-tablet-only { background: green; }
+  @include for-tablet-only { 
+    background: green; 
+  }
 }
 
 .desktop-up {
-  @include for-desktop-up { background: purple; }
+  @include for-desktop-up { 
+    background: purple;
+    text-align: center;
+  }
 }
 
 

@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import TwitterLogin from 'react-twitter-auth'
+import {Link} from 'react-router'
+
 
 class Main extends Component {
   constructor() {
@@ -39,33 +41,36 @@ class Main extends Component {
   render() {
     let content = !!this.state.isAuthenticated ?
     (
-      <div>
-        <p>You are now authenticated</p>
-        <div>
+      <div className="login-succes-box">
+        <h1>Logged succefully</h1>
+        <h3>You are now authenticated as</h3>
+        <div className="user-id-box">
           {this.state.user.email}
         </div>
         <div>
           <button 
             onClick={this.logout} 
-            className="button" >
+            className="button btn-primary" >
             Log out
           </button>
-        {/*todo: add button to reroute to components and make a request to twitter*/}
+          <Link to="/trump">Here changes componenet</Link>
         </div>
       </div>
     ) :
     (
-      <TwitterLogin 
-        loginUrl="http://localhost:4000/api/v1/auth/twitter"
-        onFailure={this.onFailed} onSuccess={this.onSuccess}
-        requestTokenUrl="http://localhost:4000/api/v1/auth/twitter/reverse"
-      />
+      <div className="login-start-box">
+        <h1>Login please pressing the button</h1>
+        <TwitterLogin 
+          loginUrl="http://localhost:4000/api/v1/auth/twitter"
+          onFailure={this.onFailed} onSuccess={this.onSuccess}
+          requestTokenUrl="http://localhost:4000/api/v1/auth/twitter/reverse"
+        />
+      </div>
     )
 
     return (
-      <div className="Main-container col-xs-12 small phone-only tablet-only desktop-up">
-        <div className="wrapper-container">
-          <h1>only show is this is Phone</h1>
+      <div className="Main-box col-xs-12 small phone-only tablet-only desktop-up">
+        <div className="wrapper-box">
           {content}
         </div>
       </div>
